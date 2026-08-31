@@ -484,55 +484,279 @@
 
             <h2 class="section-title">Refeições do Dia</h2>
             <div class="meals-container">
-              <div class="meal-card">
-                <div class="meal-header">
-                  <div class="meal-title">
-                    <span class="meal-number">1</span>
-                    <h4>Café da Manhã</h4>
-                  </div>
-                  <span class="meal-time">10h</span>
-                </div>
-                <p>150g tapioca + 1 banana + 5 ovos inteiros</p>
+  <!-- REFEIÇÃO 1 -->
+  <details class="meal-accordion">
+    <summary class="meal-summary">
+      <div class="meal-header-info">
+        <div class="meal-title"><span class="meal-number">1</span><h4>Café da Manhã</h4></div>
+        <span class="meal-time">10h</span>
+      </div>
+    </summary>
+    <div class="meal-content">
+      <p class="meal-description">150g tapioca + 1 banana + 5 ovos inteiros</p>
+      
+      <div class="meal-stats-grid">
+        <!-- GRÁFICO CIRCULAR (Distribuição dos Macros da Refeição) -->
+        <div class="stat-box">
+          <h5>Nesta Refeição</h5>
+          <div class="meal-pie-container">
+            <!-- Pie Chart: Carb 60% | Prot 23% | Fat 17% -->
+            <div class="meal-pie-chart" style="background: conic-gradient(var(--info) 0% 60%, var(--success) 60% 83%, var(--warning) 83% 100%);">
+              <div class="meal-pie-center">
+                <span class="val">725</span>
+                <span class="lbl">kcal</span>
               </div>
-              <div class="meal-card">
-                <div class="meal-header">
-                  <div class="meal-title">
-                    <span class="meal-number">2</span>
-                    <h4>Almoço</h4>
-                  </div>
-                  <span class="meal-time">14h</span>
-                </div>
-                <p>
-                  300g macarrão espaguete (peso pronto) + 170g filé de peito de
-                  frango (peso cru) + 1 banana
-                </p>
+            </div>
+            <div class="meal-legend">
+              <div class="meal-legend-item">
+                <div class="meal-legend-label"><span class="dot dot-carb"></span>Carbo</div>
+                <div class="meal-legend-value"><strong>90g</strong> (60%)</div>
               </div>
-              <div class="meal-card">
-                <div class="meal-header">
-                  <div class="meal-title">
-                    <span class="meal-number">3</span>
-                    <h4>Pré-Treino</h4>
-                  </div>
-                  <span class="meal-time">18h</span>
-                </div>
-                <p>
-                  300g macarrão espaguete (peso pronto) + 170g filé de peito de
-                  frango (peso cru)
-                </p>
+              <div class="meal-legend-item">
+                <div class="meal-legend-label"><span class="dot dot-prot"></span>Proteína</div>
+                <div class="meal-legend-value"><strong>35g</strong> (23%)</div>
               </div>
-              <div class="meal-card">
-                <div class="meal-header">
-                  <div class="meal-title">
-                    <span class="meal-number">4</span>
-                    <h4>Jantar</h4>
-                  </div>
-                  <span class="meal-time">22h</span>
-                </div>
-                <p>100g cuscuz + 5 ovos inteiros + 1 banana + 30g aveia</p>
+              <div class="meal-legend-item">
+                <div class="meal-legend-label"><span class="dot dot-fat"></span>Gordura</div>
+                <div class="meal-legend-value"><strong>25g</strong> (17%)</div>
               </div>
             </div>
           </div>
+        </div>
 
+        <!-- BARRAS RETAS (Acumulado em Relação à Meta Diária) -->
+        <div class="stat-box">
+          <h5>Acumulado do Dia</h5>
+          <div class="macro-bar-group">
+            <div class="macro-bar-label"><span>Carb <span class="lbl-muted">(90/418g)</span></span><span class="lbl-carb">21%</span></div>
+            <div class="macro-bar">
+              <div class="macro-fill bg-carb" style="width: 21%; box-shadow: 0 0 8px var(--info-glow);"></div>
+            </div>
+          </div>
+          <div class="macro-bar-group">
+            <div class="macro-bar-label"><span>Prot <span class="lbl-muted">(35/183g)</span></span><span class="lbl-prot">19%</span></div>
+            <div class="macro-bar">
+              <div class="macro-fill bg-prot" style="width: 19%; box-shadow: 0 0 8px var(--success-glow);"></div>
+            </div>
+          </div>
+          <div class="macro-bar-group">
+            <div class="macro-bar-label"><span>Gord <span class="lbl-muted">(25/67g)</span></span><span class="lbl-fat">37%</span></div>
+            <div class="macro-bar">
+              <div class="macro-fill bg-fat" style="width: 37%; box-shadow: 0 0 8px var(--warning-glow);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- REFEIÇÃO 2 -->
+  <details class="meal-accordion">
+    <summary class="meal-summary">
+      <div class="meal-header-info">
+        <div class="meal-title"><span class="meal-number">2</span><h4>Almoço</h4></div>
+        <span class="meal-time">14h</span>
+      </div>
+    </summary>
+    <div class="meal-content">
+      <p class="meal-description">300g macarrão espaguete + 170g peito de frango + 1 banana</p>
+      
+      <div class="meal-stats-grid">
+        <!-- GRÁFICO CIRCULAR (Distribuição dos Macros da Refeição) -->
+        <div class="stat-box">
+          <h5>Nesta Refeição</h5>
+          <div class="meal-pie-container">
+            <!-- Pie Chart: Carb 63% | Prot 31% | Fat 6% -->
+            <div class="meal-pie-chart" style="background: conic-gradient(var(--info) 0% 63%, var(--success) 63% 94%, var(--warning) 94% 100%);">
+              <div class="meal-pie-center">
+                <span class="val">750</span>
+                <span class="lbl">kcal</span>
+              </div>
+            </div>
+            <div class="meal-legend">
+              <div class="meal-legend-item">
+                <div class="meal-legend-label"><span class="dot dot-carb"></span>Carbo</div>
+                <div class="meal-legend-value"><strong>110g</strong> (63%)</div>
+              </div>
+              <div class="meal-legend-item">
+                <div class="meal-legend-label"><span class="dot dot-prot"></span>Proteína</div>
+                <div class="meal-legend-value"><strong>55g</strong> (31%)</div>
+              </div>
+              <div class="meal-legend-item">
+                <div class="meal-legend-label"><span class="dot dot-fat"></span>Gordura</div>
+                <div class="meal-legend-value"><strong>10g</strong> (6%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BARRAS RETAS (Acumulado do Dia) -->
+        <div class="stat-box">
+          <h5>Acumulado do Dia</h5>
+          <div class="macro-bar-group">
+            <div class="macro-bar-label"><span>Carb <span class="lbl-muted">(200/418g)</span></span><span class="lbl-carb">47%</span></div>
+            <div class="macro-bar">
+              <div class="macro-fill bg-carb" style="width: 21%; opacity: 0.3;"></div>
+              <div class="macro-fill bg-carb" style="width: 26%; box-shadow: 0 0 8px var(--info-glow);"></div>
+            </div>
+          </div>
+          <div class="macro-bar-group">
+            <div class="macro-bar-label"><span>Prot <span class="lbl-muted">(90/183g)</span></span><span class="lbl-prot">49%</span></div>
+            <div class="macro-bar">
+              <div class="macro-fill bg-prot" style="width: 19%; opacity: 0.3;"></div>
+              <div class="macro-fill bg-prot" style="width: 30%; box-shadow: 0 0 8px var(--success-glow);"></div>
+            </div>
+          </div>
+          <div class="macro-bar-group">
+            <div class="macro-bar-label"><span>Gord <span class="lbl-muted">(35/67g)</span></span><span class="lbl-fat">52%</span></div>
+            <div class="macro-bar">
+              <div class="macro-fill bg-fat" style="width: 37%; opacity: 0.3;"></div>
+              <div class="macro-fill bg-fat" style="width: 15%; box-shadow: 0 0 8px var(--warning-glow);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- REFEIÇÃO 3 -->
+  <details class="meal-accordion">
+    <summary class="meal-summary">
+      <div class="meal-header-info">
+        <div class="meal-title"><span class="meal-number">3</span><h4>Pré-Treino</h4></div>
+        <span class="meal-time">18h</span>
+      </div>
+    </summary>
+    <div class="meal-content">
+      <p class="meal-description">300g macarrão espaguete + 170g peito de frango</p>
+      
+      <div class="meal-stats-grid">
+        <!-- GRÁFICO CIRCULAR -->
+        <div class="stat-box">
+          <h5>Nesta Refeição</h5>
+          <div class="meal-pie-container">
+            <!-- Pie Chart: Carb 61% | Prot 33% | Fat 6% -->
+            <div class="meal-pie-chart" style="background: conic-gradient(var(--info) 0% 61%, var(--success) 61% 94%, var(--warning) 94% 100%);">
+              <div class="meal-pie-center">
+                <span class="val">710</span>
+                <span class="lbl">kcal</span>
+              </div>
+            </div>
+            <div class="meal-legend">
+              <div class="meal-legend-item">
+                <div class="meal-legend-label"><span class="dot dot-carb"></span>Carbo</div>
+                <div class="meal-legend-value"><strong>100g</strong> (61%)</div>
+              </div>
+              <div class="meal-legend-item">
+                <div class="meal-legend-label"><span class="dot dot-prot"></span>Proteína</div>
+                <div class="meal-legend-value"><strong>55g</strong> (33%)</div>
+              </div>
+              <div class="meal-legend-item">
+                <div class="meal-legend-label"><span class="dot dot-fat"></span>Gordura</div>
+                <div class="meal-legend-value"><strong>10g</strong> (6%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BARRAS RETAS -->
+        <div class="stat-box">
+          <h5>Acumulado do Dia</h5>
+          <div class="macro-bar-group">
+            <div class="macro-bar-label"><span>Carb <span class="lbl-muted">(300/418g)</span></span><span class="lbl-carb">71%</span></div>
+            <div class="macro-bar">
+              <div class="macro-fill bg-carb" style="width: 47%; opacity: 0.3;"></div>
+              <div class="macro-fill bg-carb" style="width: 24%; box-shadow: 0 0 8px var(--info-glow);"></div>
+            </div>
+          </div>
+          <div class="macro-bar-group">
+            <div class="macro-bar-label"><span>Prot <span class="lbl-muted">(145/183g)</span></span><span class="lbl-prot">79%</span></div>
+            <div class="macro-bar">
+              <div class="macro-fill bg-prot" style="width: 49%; opacity: 0.3;"></div>
+              <div class="macro-fill bg-prot" style="width: 30%; box-shadow: 0 0 8px var(--success-glow);"></div>
+            </div>
+          </div>
+          <div class="macro-bar-group">
+            <div class="macro-bar-label"><span>Gord <span class="lbl-muted">(45/67g)</span></span><span class="lbl-fat">67%</span></div>
+            <div class="macro-bar">
+              <div class="macro-fill bg-fat" style="width: 52%; opacity: 0.3;"></div>
+              <div class="macro-fill bg-fat" style="width: 15%; box-shadow: 0 0 8px var(--warning-glow);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- REFEIÇÃO 4 -->
+  <details class="meal-accordion">
+    <summary class="meal-summary">
+      <div class="meal-header-info">
+        <div class="meal-title"><span class="meal-number">4</span><h4>Jantar</h4></div>
+        <span class="meal-time">22h</span>
+      </div>
+    </summary>
+    <div class="meal-content">
+      <p class="meal-description">100g cuscuz + 5 ovos inteiros + 1 banana + 30g aveia</p>
+      
+      <div class="meal-stats-grid">
+        <!-- GRÁFICO CIRCULAR -->
+        <div class="stat-box">
+          <h5>Nesta Refeição</h5>
+          <div class="meal-pie-container">
+            <!-- Pie Chart: Carb 66% | Prot 21% | Fat 13% -->
+            <div class="meal-pie-chart" style="background: conic-gradient(var(--info) 0% 66%, var(--success) 66% 87%, var(--warning) 87% 100%);">
+              <div class="meal-pie-center">
+                <span class="val">822</span>
+                <span class="lbl">kcal</span>
+              </div>
+            </div>
+            <div class="meal-legend">
+              <div class="meal-legend-item">
+                <div class="meal-legend-label"><span class="dot dot-carb"></span>Carbo</div>
+                <div class="meal-legend-value"><strong>118g</strong> (66%)</div>
+              </div>
+              <div class="meal-legend-item">
+                <div class="meal-legend-label"><span class="dot dot-prot"></span>Proteína</div>
+                <div class="meal-legend-value"><strong>38g</strong> (21%)</div>
+              </div>
+              <div class="meal-legend-item">
+                <div class="meal-legend-label"><span class="dot dot-fat"></span>Gordura</div>
+                <div class="meal-legend-value"><strong>22g</strong> (13%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BARRAS RETAS -->
+        <div class="stat-box">
+          <h5>Acumulado do Dia</h5>
+          <div class="macro-bar-group">
+            <div class="macro-bar-label"><span>Carb <span class="lbl-muted">(418/418g)</span></span><span class="lbl-carb">100%</span></div>
+            <div class="macro-bar">
+              <div class="macro-fill bg-carb" style="width: 71%; opacity: 0.3;"></div>
+              <div class="macro-fill bg-carb" style="width: 29%; box-shadow: 0 0 8px var(--info-glow);"></div>
+            </div>
+          </div>
+          <div class="macro-bar-group">
+            <div class="macro-bar-label"><span>Prot <span class="lbl-muted">(183/183g)</span></span><span class="lbl-prot">100%</span></div>
+            <div class="macro-bar">
+              <div class="macro-fill bg-prot" style="width: 79%; opacity: 0.3;"></div>
+              <div class="macro-fill bg-prot" style="width: 21%; box-shadow: 0 0 8px var(--success-glow);"></div>
+            </div>
+          </div>
+          <div class="macro-bar-group">
+            <div class="macro-bar-label"><span>Gord <span class="lbl-muted">(67/67g)</span></span><span class="lbl-fat">100%</span></div>
+            <div class="macro-bar">
+              <div class="macro-fill bg-fat" style="width: 67%; opacity: 0.3;"></div>
+              <div class="macro-fill bg-fat" style="width: 33%; box-shadow: 0 0 8px var(--warning-glow);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+</div>
           <div>
             <h2 class="section-title">Próximas Fases & Histórico</h2>
 
