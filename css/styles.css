@@ -351,3 +351,203 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--a
 .carga-sets-container { display: flex; flex-direction: column; gap: 4px; }
 .carga-set-row { display: flex; justify-content: space-between; background: rgba(255,255,255,0.05); padding: 8px 10px; border-radius: 6px; font-family: monospace; font-size: 13px; border-left: 2px solid var(--success); }
 .carga-weight { color: var(--success); font-weight: bold; font-size: 14px; }
+
+/* ==========================================================================
+   MEAL ACCORDION & MACRO CHARTS (DIETA TABS)
+   ========================================================================== */
+.meal-accordion { 
+    background: var(--bg-card); 
+    border: 1px solid var(--border-color); 
+    border-left: 3px solid var(--text-muted); 
+    border-radius: 12px; 
+    margin-bottom: 12px; 
+    overflow: hidden; 
+    transition: all 0.3s ease; 
+}
+.meal-accordion:hover { border-left-color: rgba(255,255,255,0.3); }
+.meal-accordion[open] { border-left-color: var(--success); }
+
+.meal-summary { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 16px; 
+    cursor: pointer; 
+    list-style: none; 
+}
+.meal-summary::-webkit-details-marker { display: none; } /* Oculta a seta padrão do navegador */
+.meal-summary::after { 
+    content: '▼'; 
+    font-size: 10px; 
+    color: var(--text-muted); 
+    transition: transform 0.3s; 
+}
+.meal-accordion[open] .meal-summary::after { transform: rotate(180deg); }
+
+.meal-header-info { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+    padding-right: 16px; 
+}
+
+.meal-content { padding: 0 16px 16px 16px; }
+.meal-description { 
+    font-size: 13px; 
+    color: #ccc; 
+    line-height: 1.5; 
+    margin-bottom: 16px; 
+    padding-bottom: 12px; 
+    border-bottom: 1px dashed var(--border-color); 
+}
+
+/* Gráficos de Macros da Refeição */
+.meal-stats-grid { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 16px; 
+}
+@media (min-width: 800px) { 
+    .meal-stats-grid { grid-template-columns: 1fr 1fr; } 
+}
+
+.stat-box { 
+    background: var(--bg-input); 
+    padding: 14px; 
+    border-radius: 10px; 
+    border: 1px solid rgba(255,255,255,0.03); 
+}
+.stat-box h5 { 
+    font-size: 11px; 
+    text-transform: uppercase; 
+    color: var(--text-muted); 
+    margin-bottom: 12px; 
+    letter-spacing: 0.5px; 
+}
+
+.macro-bar-group { margin-bottom: 10px; }
+.macro-bar-group:last-child { margin-bottom: 0; }
+
+.macro-bar-label { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 11px; 
+    font-weight: 600; 
+    margin-bottom: 6px; 
+    color: #fff; 
+}
+.macro-bar-label .lbl-carb { color: var(--info); }
+.macro-bar-label .lbl-prot { color: var(--success); }
+.macro-bar-label .lbl-fat { color: var(--warning); }
+.macro-bar-label .lbl-muted { color: var(--text-muted); font-weight: normal; font-size: 10px; }
+
+/* Estrutura das Barras */
+.macro-bar { 
+    width: 100%; 
+    height: 8px; 
+    background: rgba(0,0,0,0.3); 
+    border-radius: 4px; 
+    overflow: hidden; 
+    display: flex; 
+}
+.macro-fill { height: 100%; border-radius: 4px; }
+.bg-carb { background: var(--info); }
+.bg-prot { background: var(--success); }
+.bg-fat { background: var(--warning); }
+
+/* ==========================================================================
+   GRÁFICO CIRCULAR DE REFEIÇÃO & BARRAS ACUMULADAS
+   ========================================================================== */
+
+/* Layout da Caixa 'Nesta Refeição' (Pizza + Legenda) */
+.meal-pie-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 4px 0;
+}
+
+/* Gráfico de Rosca/Pizza 3 Cores (Carb/Prot/Fat) */
+.meal-pie-chart {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Furo central para transformar em Donut */
+.meal-pie-chart::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    background: var(--bg-input);
+    border-radius: 50%;
+}
+
+.meal-pie-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.meal-pie-center .val {
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+}
+
+.meal-pie-center .lbl {
+    font-size: 8px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* Legenda ao lado da Pizza */
+.meal-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.meal-legend-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+}
+
+.meal-legend-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-carb { background: var(--info); }
+.dot-prot { background: var(--success); }
+.dot-fat { background: var(--warning); }
+
+.meal-legend-value {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+.meal-legend-value strong {
+    color: #fff;
+}
