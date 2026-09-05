@@ -551,3 +551,25 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--a
 .meal-legend-value strong {
     color: #fff;
 }
+
+/* Container de cada linha da legenda */
+.meal-legend-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px; /* Força um respiro mínimo entre nome e valor */
+  width: 100%;
+  margin-bottom: 6px; /* Ajuste o espaçamento vertical se necessário */
+}
+
+/* Impede que o texto e os valores quebrem para a linha de baixo */
+.meal-legend-label,
+.meal-legend-value {
+  white-space: nowrap; 
+}
+
+/* Opcional: Garante que os números fiquem sempre alinhados à direita */
+.meal-legend-value {
+  text-align: right;
+  flex-shrink: 0; /* Impede que o valor seja espremido */
+}
