@@ -573,3 +573,28 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--a
   text-align: right;
   flex-shrink: 0; /* Impede que o valor seja espremido */
 }
+
+/* ==========================================================================
+   RITUAL PRÉ TREINO & GUIA DE SÉRIES
+   ========================================================================== */
+
+/* Cards do Ritual */
+.ritual-container { display: flex; flex-direction: column; gap: 16px; margin-top: 10px; }
+.ritual-card { background: var(--bg-input); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; }
+.ritual-header { background: rgba(255, 149, 0, 0.1); color: var(--warning); padding: 12px 16px; font-weight: 700; font-size: 13px; text-transform: uppercase; border-bottom: 1px solid var(--border-color); }
+.ritual-content { padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+.ritual-item { display: flex; flex-direction: column; gap: 6px; }
+.ritual-label { font-size: 10px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; }
+.ritual-item p { font-size: 13px; color: #fff; line-height: 1.6; margin: 0; }
+
+/* Guia de Séries */
+.border-info { border-left: 4px solid var(--info); }
+.guide-container { background: var(--bg-input); border-radius: 12px; padding: 16px; border: 1px solid var(--border-color); margin-top: 10px; }
+.guide-block { display: flex; flex-direction: column; gap: 6px; }
+.guide-block.divider { margin-top: 16px; border-top: 1px dashed var(--border-color); padding-top: 16px; }
+.guide-title { font-size: 14px; color: var(--info); font-weight: 700; margin: 0 0 4px 0; }
+.guide-list { list-style: none; padding: 0; margin: 0 0 10px 0; display: flex; flex-direction: column; gap: 6px; }
+.guide-list li { font-size: 13px; color: #ddd; position: relative; padding-left: 14px; }
+.guide-list li::before { content: '•'; position: absolute; left: 0; color: var(--info); font-weight: bold; }
+.guide-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin: 0; }
+.guide-desc strong { color: #fff; }
