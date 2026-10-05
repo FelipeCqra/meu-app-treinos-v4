@@ -3,18 +3,16 @@ const exerciciosGerais = [
   "Abdominal supra máquina",
   "Abdominal infra máquina",
   "Abdominal infra livre",
+  "Abdominal obliquo livre",
   "Canoinha isometria",
   "--- AQUECIMENTO / PREVENÇÃO ---",
   "Aquecimento manguito",
-  "Liberação do Trapézio com bolinha",
-  "Child's pose e variação",
-  "Wall slides",
-  "Rotação torácica",
 ];
 
 const exerciciosUpper = [
   "--- PEITO ---",
   "Supino inclinado articulado",
+  "Supino inclinado halter",
   "Supino reto máquina",
   "Fly máquina",
   "Supino reto halter",
@@ -26,11 +24,13 @@ const exerciciosUpper = [
   "Puxador aberto romano",
   "Puxador fechado romano",
   "Puxador aberto pronado",
+  "Remada baixa romano fechado",
   "Extensão lombar no banco romano",
   "--- OMBRO ---",
   "Elevação lateral máquina sentado",
   "Elevação lateral unilateral cabo",
   "Elevação lateral em pé máquina",
+  "Elevação lateral halter",
   "Desenvolvimento máquina",
   "Desenvolvimento halter",
   "Desenvolvimento smith",
@@ -40,6 +40,7 @@ const exerciciosUpper = [
   "Rosca martelo corda",
   "Rosca martelo halter",
   "Rosca direta halter",
+  "Rosca direta cabo",
   "--- TRÍCEPS ---",
   "Tríceps pulley",
   "Tríceps pulley encostado",
@@ -65,7 +66,6 @@ const exerciciosLower = [
   "Cadeira flexora",
   "Stiff",
   "Flexor em pé unilateral",
-  "Extensão lombar no banco romano",
   "Cadeira abdutora",
   "--- PANTURRILHA ---",
   "Panturrilha leg horizontal",
@@ -80,10 +80,12 @@ export const dbExercicios = {
     "Supino reto máquina",
     "Fly máquina",
     "Supino reto halter",
+    "Supino inclinado halter",
     "--- OMBRO ---",
     "Elevação lateral máquina sentado",
     "Elevação lateral unilateral cabo",
     "Elevação lateral em pé máquina",
+    "Elevação lateral halter",
     "Desenvolvimento máquina",
     "Desenvolvimento halter",
     "Desenvolvimento smith",
@@ -102,12 +104,14 @@ export const dbExercicios = {
     "Puxador fechado romano",
     "Puxador aberto pronado",
     "Extensão lombar no banco romano",
+    "Remada baixa romano fechado",
     "--- BÍCEPS ---",
     "Rosca unilateral cabo",
     "Rosca Scott",
     "Rosca martelo corda",
     "Rosca martelo halter",
     "Rosca direta halter",
+    "Rosca direta cabo",
   ].concat(exerciciosGerais),
   UPPER: exerciciosUpper,
   PULL_PEITO: exerciciosUpper,
@@ -138,27 +142,31 @@ export function renderNovaLinhaExercicio(container, membro = "PUSH") {
   block.className = "exercise-block";
   block.style.transition = "background-color 0.3s ease";
 
+  // Substitua o trecho block.innerHTML dentro de renderNovaLinhaExercicio:
+
   block.innerHTML = `
-        <div style="position: absolute; top: 14px; right: 14px; display: flex; gap: 6px;">
-            <button type="button" class="btn-move-up" title="Mover para cima" style="background: #1F1F24; border: 1px solid var(--border-color); color: #fff; padding: 4px 6px; border-radius: 6px; cursor: pointer; font-size: 11px;">上 ⬆️</button>
-            <button type="button" class="btn-move-down" title="Mover para baixo" style="background: #1F1F24; border: 1px solid var(--border-color); color: #fff; padding: 4px 6px; border-radius: 6px; cursor: pointer; font-size: 11px;">下 ⬇️</button>
-            <button type="button" class="btn-remove" title="Remover Exercício" style="background: transparent; color: var(--accent); border: 1px solid rgba(255,59,48,0.3); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 11px; font-weight:600;">❌</button>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <label style="margin: 0; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; color: var(--text-muted, #8e8e93);">Exercício</label>
+            <div style="display: flex; gap: 6px;">
+                <button type="button" class="btn-move-up" title="Mover para cima" style="background: #1F1F24; border: 1px solid var(--border-color); color: #fff; padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 13px;">⬆️</button>
+                <button type="button" class="btn-move-down" title="Mover para baixo" style="background: #1F1F24; border: 1px solid var(--border-color); color: #fff; padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 13px;">⬇️</button>
+                <button type="button" class="btn-remove" title="Remover Exercício" style="background: rgba(255,59,48,0.1); color: #ff3b30; border: 1px solid rgba(255,59,48,0.3); padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight:600;">❌</button>
+            </div>
         </div>
         
-        <div class="input-group" style="width: 62%; margin-bottom: 12px;">
-            <label>Exercício</label>
-            <select class="ex-name" style="padding: 10px; font-size: 14px;">
+        <div class="input-group" style="width: 100%; margin-bottom: 12px;">
+            <select class="ex-name" style="padding: 14px; font-size: 16px; border-radius: 8px; width: 100%;">
                 ${obterOpcoesDeExercicios(membro)}
             </select>
         </div>
         
         <div class="sets-wrapper">
             <div class="sets-container"></div>
-            <button type="button" class="btn-add-set btn-fab-set">+ Adicionar Série</button>
+            <button type="button" class="btn-add-set btn-fab-set" style="padding: 14px; font-size: 14px;">+ Adicionar Série</button>
         </div>
         
         <div class="input-group" style="margin-top: 12px; margin-bottom: 0;">
-            <textarea class="ex-feedback" rows="2" placeholder="Sensação muscular..." style="font-size:13px; padding:10px;"></textarea>
+            <textarea class="ex-feedback" rows="2" placeholder="Sensação muscular..." style="font-size:16px; padding:14px; border-radius: 8px;"></textarea>
         </div>
     `;
 
@@ -237,16 +245,18 @@ export function renderNovaSerie(setsContainer, defaultType = "Ajuste") {
 
   const row = document.createElement("div");
   row.className = "sets-row-v2 dynamic-set";
+  // Substitua o trecho row.innerHTML dentro da função renderNovaSerie:
+
   row.innerHTML = `
-        <select class="set-type" style="padding: 12px 4px; font-size:14px; border-radius: 8px;">
+        <select class="set-type" style="padding: 16px 4px; font-size:16px; border-radius: 8px;">
             <option value="Aquecimento" ${defaultType === "Aquecimento" ? "selected" : ""}>Aquec.</option>
             <option value="Ajuste" ${defaultType === "Ajuste" ? "selected" : ""}>Feeder</option>
             <option value="Válida" ${defaultType === "Válida" ? "selected" : ""}>Válida</option>
         </select>
-        <input type="number" inputmode="numeric" pattern="[0-9]*" class="set-placas" placeholder="Pl." ${disabledAttr} style="padding: 12px 4px; text-align:center; font-size:14px; border-radius: 8px; ${opacityStyle}">
-        <input type="number" inputmode="decimal" class="set-load" placeholder="kg" step="0.5" ${disabledAttr} style="padding: 12px 4px; text-align:center; font-size:14px; border-radius: 8px; ${opacityStyle}">
-        <input type="number" inputmode="numeric" pattern="[0-9]*" class="set-reps" placeholder="${repsPlaceholder}" style="padding: 12px 4px; text-align:center; font-size:14px; border-radius: 8px;">
-        <button type="button" class="btn-del-set" style="background:transparent; color:var(--accent); border:none; font-size:24px; cursor:pointer; text-align:center; padding-bottom: 4px;">×</button>
+        <input type="number" inputmode="numeric" pattern="[0-9]*" class="set-placas" placeholder="Pl." ${disabledAttr} style="padding: 16px 4px; text-align:center; font-size:16px; border-radius: 8px; ${opacityStyle}">
+        <input type="number" inputmode="decimal" class="set-load" placeholder="kg" step="0.5" ${disabledAttr} style="padding: 16px 4px; text-align:center; font-size:16px; border-radius: 8px; ${opacityStyle}">
+        <input type="number" inputmode="numeric" pattern="[0-9]*" class="set-reps" placeholder="${repsPlaceholder}" style="padding: 16px 4px; text-align:center; font-size:16px; border-radius: 8px;">
+        <button type="button" class="btn-del-set" style="background:transparent; color:var(--accent); border:none; font-size:28px; cursor:pointer; text-align:center; padding: 10px; margin-left: 2px;">×</button>
     `;
   row
     .querySelector(".btn-del-set")
