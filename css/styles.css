@@ -598,3 +598,66 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--a
 .guide-list li::before { content: '•'; position: absolute; left: 0; color: var(--info); font-weight: bold; }
 .guide-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin: 0; }
 .guide-desc strong { color: #fff; }
+
+/* Tamanhos maiores para botões e inputs durante o treino */
+#form-treino input, 
+#form-treino select, 
+#form-treino textarea {
+    min-height: 52px; 
+    font-size: 16px !important; /* Font-size 16px previne o zoom automático no iOS */
+    padding: 14px 12px;
+}
+
+#btn-adicionar-exercicio {
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+/* Espaçamento e legibilidade do Ritual Pré-Treino */
+.ritual-item {
+    margin-bottom: 14px; /* Espaço entre cada bloco (Mobilidade, Abdominal, etc) */
+}
+
+.ritual-item:last-child {
+    margin-bottom: 0;
+}
+
+.ritual-label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #8E8E93;
+    margin-bottom: 6px; /* Espaço entre o título cinza e a descrição */
+}
+
+.ritual-item p {
+    margin: 0;
+    line-height: 1.5; /* Melhora o espaçamento entre linhas do texto */
+    font-size: 0.95rem;
+}
+
+/* Estilos para os itens internos do Ritual Pré Treino */
+.ritual-item {
+  margin-bottom: 12px;
+}
+.ritual-item:last-child {
+  margin-bottom: 0;
+}
+.ritual-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--warning);
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+.ritual-item p {
+  font-size: 13px;
+  color: #ccc;
+  line-height: 1.4;
+  margin: 0 0 4px 0;
+}
