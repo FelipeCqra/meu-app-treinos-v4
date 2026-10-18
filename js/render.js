@@ -115,7 +115,7 @@ export const dbExercicios = {
     "Rosca direta cabo",
   ].concat(exerciciosGerais),
   UPPER: exerciciosUpper,
-  COMPLEMENTO: exerciciosUpper,
+  ADICIONAL: exerciciosUpper,
   PULL_PEITO: exerciciosUpper,
   PUSH_COSTAS: exerciciosUpper,
   LOWER: exerciciosLower,
