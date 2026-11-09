@@ -23,6 +23,7 @@ const exerciciosUpper = [
   "Remada baixa máquina apoio de peito",
   "Remada T-bar fechada",
   "Puxador aberto romano",
+  "Remada curvada halter",
   "Puxador fechado romano",
   "Puxador aberto pronado",
   "Remada baixa romano fechado",
@@ -38,6 +39,7 @@ const exerciciosUpper = [
   "--- BÍCEPS ---",
   "Rosca unilateral cabo",
   "Rosca Scott",
+  "Rosca Scott unilateral",
   "Rosca martelo corda",
   "Rosca martelo halter",
   "Rosca direta halter",
@@ -46,6 +48,14 @@ const exerciciosUpper = [
   "Tríceps pulley",
   "Tríceps pulley encostado",
   "Tríceps testa unilateral cabo",
+  "Tríceps Corda",
+  "--- ANTEBRAÇO ---",
+  "Rosca Inversa Barra",
+  "Rosca Inversa Cabo",
+  "Flexão de Punho com Halter",
+  "Flexão de Punho Cabo",
+  "Extensão de Punho Barra",
+  "Extensão de Punho Cabo",
 ].concat(exerciciosGerais);
 
 const exerciciosLower = [
@@ -98,6 +108,7 @@ export const dbExercicios = {
   PULL: [
     "--- COSTAS ---",
     "Remada T-bar aberta",
+    "Remada curvada halter",
     "Puxador bilateral",
     "Remada baixa máquina apoio de peito",
     "Remada T-bar fechada",
