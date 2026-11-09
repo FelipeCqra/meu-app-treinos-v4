@@ -1,5 +1,6 @@
 // No topo do arquivo principal, importe o auth e as funções necessárias
 import { auth } from "./firebase-config.js"; // Ajuste o caminho se necessário
+import { renderizarDieta } from "./dieta.js";
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -81,6 +82,7 @@ import {
   obterOpcoesDeExercicios,
   renderCargasPorFrequencia, // <--- ADICIONE ESTA LINHA AQUI
 } from "./render.js";
+import { renderizarFichas } from "./fichas.js";
 
 let editingDocId = null;
 
@@ -398,6 +400,8 @@ async function handleFormSubmit(e) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  renderizarFichas(); // Renderiza as fichas assim que o DOM estiver pronto
+  renderizarDieta(); // Renderiza a dieta assim que o DOM estiver pronto
   definirDataHoje();
 
   // Força a leitura da URL inicial para abrir a aba correta quando o site carrega
