@@ -1,6 +1,10 @@
-// 1. DADOS DA DIETA (Você só precisará alterar aqui no futuro)
+// 1. DADOS DA DIETA (Tudo centralizado aqui)
 const dieta = {
-  alvos: { kcal: 2589, carb: 330, prot: 173, fat: 64 },
+  info: {
+    titulo: "Exclusivo Semana 03/11 - 08/11 (Cutting Bloco 1)",
+    vigencia: "03/11/2026 → 08/11/2026",
+  },
+  alvos: { kcal: 2589, carb: 330, prot: 173, fat: 64 }, // Atualize com os valores corretos
   refeicoes: [
     {
       titulo: "Refeição 1",
@@ -41,7 +45,46 @@ const dieta = {
   ],
 };
 
-// 2. FUNÇÃO GERADORA
+// 2. FUNÇÃO PARA RENDERIZAR O CABEÇALHO (Card de Macros)
+export function renderizarCabecalhoDieta() {
+  const container = document.getElementById("active-diet-container");
+  if (!container) return;
+
+  container.innerHTML = `
+    <div class="info-card highlight glass-effect border-success">
+      <div class="card-badge">DIETA ATIVA</div>
+      <h3 style="color: var(--success); font-size: 18px">
+        ${dieta.info.titulo}
+      </h3>
+      <p class="card-meta">Vigência: ${dieta.info.vigencia}</p>
+
+      <div class="macro-grid">
+        <div class="macro-card kcal">
+          <span class="macro-label">Calorias</span>
+          <span class="macro-value">${dieta.alvos.kcal}</span>
+          <span class="macro-icon">🔥</span>
+        </div>
+        <div class="macro-card carb">
+          <span class="macro-label">Carbos</span>
+          <span class="macro-value">${dieta.alvos.carb}g</span>
+          <span class="macro-icon">🍞</span>
+        </div>
+        <div class="macro-card prot">
+          <span class="macro-label">Proteína</span>
+          <span class="macro-value">${dieta.alvos.prot}g</span>
+          <span class="macro-icon">🥩</span>
+        </div>
+        <div class="macro-card fat">
+          <span class="macro-label">Gordura</span>
+          <span class="macro-value">${dieta.alvos.fat}g</span>
+          <span class="macro-icon">🥑</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// 3. FUNÇÃO GERADORA
 export function renderizarDieta() {
   const container = document.getElementById("meals-container");
   if (!container) return;
