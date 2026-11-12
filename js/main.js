@@ -1,6 +1,6 @@
 // No topo do arquivo principal, importe o auth e as funções necessárias
 import { auth } from "./firebase-config.js"; // Ajuste o caminho se necessário
-import { renderizarDieta } from "./dieta.js";
+import { renderizarDieta, renderizarCabecalhoDieta } from "./dieta.js";
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -401,6 +401,7 @@ async function handleFormSubmit(e) {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderizarFichas(); // Renderiza as fichas assim que o DOM estiver pronto
+  renderizarCabecalhoDieta(); // Renderiza o cabeçalho da dieta assim que o DOM estiver pronto
   renderizarDieta(); // Renderiza a dieta assim que o DOM estiver pronto
   definirDataHoje();
 
