@@ -1,8 +1,8 @@
 // 1. DADOS DA DIETA (Tudo centralizado aqui)
 const dieta = {
   info: {
-    titulo: "Exclusivo Semana 03/11 - 08/11 (Cutting Bloco 1)",
-    vigencia: "03/11/2026 → 08/11/2026",
+    titulo: "Cutting Bloco 1",
+    vigencia: "03/11/2026 → 22/11/2026",
   },
   alvos: { kcal: 2589, carb: 330, prot: 173, fat: 64 }, // Atualize com os valores corretos
   refeicoes: [
