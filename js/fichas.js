@@ -4,8 +4,8 @@ const fichas = [
     icone: "🔥",
     titulo: "Upper A",
     exercicios: [
-      { nome: "Remada Curvada Halter", series: 2 },
-      { nome: "Barra Fixa", series: 2 },
+      { nome: "Remada Curvada Halter", series: 1 },
+      { nome: "Puxador Aberto", series: 2 },
       { nome: "Supino Inclinado Articulado", series: 3 },
       { nome: "Peck Deck", series: 2 },
       { nome: "Desenvolvimento", series: 2 },
@@ -30,7 +30,7 @@ const fichas = [
     icone: "⚡",
     titulo: "Upper B",
     exercicios: [
-      { nome: "Remada Baixa Apoiada Cabo", series: 2 },
+      { nome: "Remada Baixa Apoiada Cabo", series: 3 },
       { nome: "Puxador Fechado", series: 2 },
       { nome: "Supino Reto Máquina", series: 3 },
       { nome: "Elevação Lateral Máquina", series: 3 },
@@ -45,7 +45,7 @@ const fichas = [
     exercicios: [
       { nome: "Cadeira Abdutora", series: 1 },
       { nome: "Cadeira Flexora", series: 2 },
-      { nome: "Agachamento Smith / Afundo", series: 1 },
+      { nome: "Afundo", series: 1 },
       { nome: "Leg 45", series: 2 },
       { nome: "Panturrilha Sentado", series: 2 },
       { nome: "Panturrilha em Pé", series: 1 },
@@ -110,3 +110,4 @@ export function renderizarFichas() {
     container.insertAdjacentHTML("beforeend", htmlFicha);
   });
 }
+
